@@ -1,0 +1,3 @@
+1. Limited to the WHERE and HAVING clause
+2. Write recursive queries
+3. Perform set operations

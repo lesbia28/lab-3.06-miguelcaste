@@ -1,8 +1,11 @@
 package com.ironhack.inheritancedemo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import java.sql.Date;
 
 @Entity
+@PrimaryKeyJoinColumn(name="id")
 public class BillableTask extends Task {
     private final int billableProjectsPlanning;
     private int hourlyRate;
@@ -11,7 +14,7 @@ public class BillableTask extends Task {
         this.billableProjectsPlanning = billableProjectsPlanning;
     }
 
-    public BillableTask(int id, String title, date dueDate, boolean status, int billableProjectsPlanning, int hourlyRate) {
+    public BillableTask(int id, String title, Date dueDate, boolean status, int billableProjectsPlanning, int hourlyRate) {
         super(id, title, dueDate, status);
         this.billableProjectsPlanning = billableProjectsPlanning;
         this.hourlyRate = hourlyRate;

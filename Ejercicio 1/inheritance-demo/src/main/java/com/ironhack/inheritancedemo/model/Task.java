@@ -1,28 +1,26 @@
 package com.ironhack.inheritancedemo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Task {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
     private Date dueDate;
-    private boolean Status;
+    private boolean status;
 
     public Task() {
     }
 
-    public Task(int id, String title, date dueDate, boolean status) {
+    public Task(int id, String title, Date dueDate, boolean status) {
         this.id = id;
         this.title = title;
         this.dueDate = dueDate;
-        Status = status;
+        this.status = status;
     }
 
     public int getId() {
@@ -41,20 +39,20 @@ public class Task {
         this.title = title;
     }
 
-    public date getDueDate() {
+    public Date getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(date dueDate) {
+    public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
     }
 
     public boolean isStatus() {
-        return Status;
+        return this.status;
     }
 
     public void setStatus(boolean status) {
-        Status = status;
+        this.status = status;
     }
 }
 
